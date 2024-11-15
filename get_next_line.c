@@ -103,9 +103,3 @@ char	*get_next_line(int fd)
 	}
 	return (special_free(&stash, 1));
 }
-
-#include <stdio.h>
-
-int main() {
-	printf("%s\n", get_next_line(0));
-}
