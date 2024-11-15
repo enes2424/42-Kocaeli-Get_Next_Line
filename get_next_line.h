@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oakbulak <oakbulak@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: eates <eates@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 17:42:57 by oakbulak          #+#    #+#             */
-/*   Updated: 2023/07/13 17:51:39 by oakbulak         ###   ########.fr       */
+/*   Created: 2024/11/15 19:23:07 by eates             #+#    #+#             */
+/*   Updated: 2024/11/15 20:15:04 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 16
+# elif BUFFER_SIZE <= 0
+#  define BUFFER_SIZE 16
+# elif BUFFER_SIZE > 5000000
+#  define BUFFER_SIZE 1000000
 # endif
 
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s1);
-void	*ft_free_stash(char **stash, int create_line);
 char	*get_next_line(int fd);
 
 #endif
